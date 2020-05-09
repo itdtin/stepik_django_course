@@ -41,6 +41,7 @@ class DepartureView(View):
                 'subtitle': subtitle,
                 'description': description,
                 'departure': departures[departure_name],
+                'active': departure_name,
                 'departures': departures,
                 'tours': tours,
                 'turs': turs,
@@ -63,4 +64,5 @@ class TourView(View):
 
         return render(request, 'tours/tour.html', context={'tour': tours[id],
                                                            'departure': departures[tours[id]['departure']],
-                                                           'id': id})
+                                                           'active': tours[id]['departure'],
+                                                           'id': id, 'departures': departures})

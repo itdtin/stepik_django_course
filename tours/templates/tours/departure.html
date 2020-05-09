@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
-<h1 class="display-5 mt-4">Летим <span data-test="from">{{ departure }}</span></h1>
+<h1 class="display-5 mt-4">Летим <span data-test="from">{{ departures.active }}</span></h1>
     <p class="mb-4" >Найдено <span data-test="tourcount">{{ turs|length }}</span> туров, от <span data-test="pricemin">{{ price_min }}</span> до <span data-test="pricemax">{{ price_max }}</span> и от <span data-test="nightsmax">{{ nights_min }}</span> ночей до <span data-test="nightsmax">{{ nights_max }}</span> ночей</p>
     <!-- HERO -->
 
