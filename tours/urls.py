@@ -1,8 +1,7 @@
-from django.urls import path
-from .views import MainView, DepartureView, TourView
+from django.urls import re_path
+from .views import DepartureView, TourView
 
 urlpatterns = [
-    path('', MainView.as_view(), name='index'),
-    path('departure/<str:departure_name>', DepartureView.as_view(), name='departure'),
-    path('tour/<int:id>/', TourView.as_view(), name='tour'),
+    re_path(r'(?P<departure_name>\D+)/', DepartureView.as_view(), name='departure'),
+    re_path(r'(?P<id>\d+)/', TourView.as_view(), name='tour'),
 ]

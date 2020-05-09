@@ -40,6 +40,7 @@ class TourView(View):
     """Класс представления для каждого тура"""
 
     def get(self, request, id, *args, **kwargs):
+        id = int(id)
         if id not in tours:
             raise Http404
 
